@@ -1,0 +1,22 @@
+{
+    "name": "justbetter/statamic-partytown",
+    "require": {
+        "symfony/psr-http-message-bridge": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "JustBetter\\StatamicPartytown\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Statamic Partytown",
+            "description": "Statamic Partytown addon"
+        },
+        "laravel": {
+            "providers": [
+                "JustBetter\\StatamicPartytown\\ServiceProvider"
+            ]
+        }
+    }
+}

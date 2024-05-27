@@ -1,0 +1,168 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: domain_whitelist
+            field:
+              type: list
+              display: 'Domain Whitelist'
+              icon: list
+              instructions: |-
+                Some scripts don't have their CORS headers set correctly.
+                By adding their domains here they will be proxied and have correct CORS headers
+                see: https://partytown.builder.io/proxying-requests
+                format: subdomain.example.com
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              duplicate: false
+              hide_display: false
+          -
+            handle: forward_functions
+            field:
+              fields:
+                -
+                  handle: field_name
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: 'Field Name'
+                    icon: text
+                    localizable: false
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: preserve_behavior
+                  field:
+                    default: false
+                    type: toggle
+                    display: 'Preserve Behavior'
+                    icon: toggle
+                    localizable: false
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                    width: 25
+                    instructions: 'When preserveBehavior is set to true, the original function’s behavior on the main thread is maintained, while also forwarding the calls to partytown. This is useful in cases where the function has side effects on the main thread that you want to keep.'
+              mode: table
+              reorderable: true
+              fullscreen: true
+              type: grid
+              display: 'Forward Functions'
+              icon: grid
+              instructions: |-
+                Sending data from outside of Partytown to Partytown must be possible.
+                Here you can define which functions should be forwarded
+                see: https://partytown.builder.io/forwarding-events
+                e.g. datalayer.push
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: load_scripts_on_main_thread
+            field:
+              type: list
+              display: 'Load Scripts On Main Thread'
+              icon: list
+              instructions: |-
+                Sometimes GTM loads frontend facing scripts (like cookiebot and chatbots)
+                These should be added here so they're pushed to the frontend instead
+                see: https://partytown.builder.io/configuration#:~:text=is%20/~partytown/-,loadScriptsOnMainThread,-An%20array%20of
+                e.g.
+                https://example.com/script.js
+                /example\.com/
+                script-id
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+  scripts:
+    display: Scripts
+    sections:
+      -
+        fields:
+          -
+            handle: scripts
+            field:
+              fields:
+                -
+                  handle: script
+                  field:
+                    theme: material
+                    mode: htmlmixed
+                    mode_selectable: true
+                    indent_type: tabs
+                    indent_size: 4
+                    key_map: default
+                    line_numbers: true
+                    line_wrapping: true
+                    antlers: false
+                    type: code
+                    display: Script
+                    icon: code
+                    instructions: 'paste the script tags here'
+                    localizable: false
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: enable
+                  field:
+                    default: true
+                    type: toggle
+                    display: Enable
+                    icon: toggle
+                    instructions: 'Wether to enable this script'
+                    localizable: false
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                    width: 25
+                -
+                  handle: enable_partytown
+                  field:
+                    default: false
+                    type: toggle
+                    display: 'Enable Partytown'
+                    icon: toggle
+                    instructions: 'Wether to enable Partytown for this script'
+                    localizable: false
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                    width: 25
+              mode: table
+              reorderable: true
+              fullscreen: true
+              type: grid
+              display: Scripts
+              icon: grid
+              instructions: 'You add scripts here to load them into the page.'
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
