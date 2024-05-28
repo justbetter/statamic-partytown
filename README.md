@@ -12,6 +12,25 @@ Which allows you to keep your analytics but reclaim _some_ of the performance.
  - [Configure Vite (or your other compiler) to copy the partytown files](https://partytown.builder.io/copy-library-files#vite) (however instead of dist it should go in public)
  - Add `/public/~partytown` to your .gitignore
 
+### Load Partytown in on your head
+
+If you're using antlers you should add the following to your head
+```antlers
+<head>
+    ...
+    {{ partial:if_exists src="statamic-partytown::head" }}
+    ...
+</head>
+```
+and in case of blade you can include it using the following
+```blade
+<head>
+    ...
+    @include('statamic-partytown::head')
+    ...
+</head>
+```
+
 ### Optional
 
 If you want to manage and add scripts to the page with partytown outside of your own built templates you can publish the Partytown Settings global:
