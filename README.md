@@ -3,7 +3,7 @@
 Scripts like GTM have a massive negative impact on performance and pagespeed, to remedy this scripts like [Partytown](https://partytown.builder.io/) have been made.
 Which allows you to keep your analytics but reclaim _some_ of the performance.
 
-![Pagespeed Scores](docs/assets/pagespeed.png)
+![Pagespeed Scores](https://github.com/justbetter/statamic-partytown/raw/master/docs/assets/pagespeed.png)
 
 ## Installation
 
