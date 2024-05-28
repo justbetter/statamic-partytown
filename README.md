@@ -36,7 +36,7 @@ and in case of blade you can include it using the following
 If you want to manage and add scripts to the page with partytown outside of your own built templates you can publish the Partytown Settings global:
 
 ```bash
-php artisan vendor:publish --provider="Justbetter\StatamicPartytown\ServiceProvider" --tag=statamic-content
+php artisan vendor:publish --provider="JustBetter\StatamicPartytown\ServiceProvider" --tag=statamic-content
 ```
 
 ## Usage
