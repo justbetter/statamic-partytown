@@ -39,6 +39,8 @@ If you want to manage and add scripts to the page with partytown outside of your
 php artisan vendor:publish --provider="JustBetter\StatamicPartytown\ServiceProvider" --tag=statamic-content
 ```
 
+To speed up Partytown communication even more you can configure [Atomics](https://partytown.builder.io/atomics) simply by adding a few headers.
+
 ## Usage
 
 Partytown is running by default **if** you are running your site on https.
